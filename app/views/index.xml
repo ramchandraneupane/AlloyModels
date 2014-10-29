@@ -1,9 +1,13 @@
 <Alloy>
-	<Collection src="Picture" />
+	<Collection src="Picture" /> <!-- this initializes the model -->
 	<NavigationWindow id="navWin" platform="ios">
 		<Window title="Picture List">
 			<View>
-				<Label id="label">Hello, World</Label>	
+				<TableView id="tvList" dataCollection="Picture">
+					<TableViewRow id="row" dataId="" model="{alloy_id}">
+						<Label id="title" text="{title}" />						
+					</TableViewRow>
+				</TableView>	
 			</View>
 	</Window>
 	</NavigationWindow>
