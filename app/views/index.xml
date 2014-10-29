@@ -1,5 +1,10 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
+	<Collection src="Picture" />
+	<NavigationWindow id="navWin" platform="ios">
+		<Window title="Picture List">
+			<View>
+				<Label id="label">Hello, World</Label>	
+			</View>
 	</Window>
+	</NavigationWindow>
 </Alloy>

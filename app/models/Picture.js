@@ -6,15 +6,13 @@ exports.definition = {
 		    "path": "text",
 		    "location": "text",
 		    "photographer": "text",
-		    "timestamp": "text"
 		},
 		default: {
-			title: "",
-			description: "",
-			path: "",
-			location: "",
-			photographer: "",
-			timestamp: ""
+			"title": "",
+			"description": "",
+			"path": "",
+			"location": "",
+			"photographer": "",
 		},	
 		adapter: {
 			type: "sql",
