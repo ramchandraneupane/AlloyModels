@@ -1,4 +1,15 @@
 
+//Helper function to facilitate testing
+function resetData(){
+	Ti.App.Properties.removeProperty('db_initialized');
+	Alloy.Collections.Picture.fetch();
+
+	
+	while(Alloy.Collections.Picture.length) { 
+    	Alloy.Collections.Picture.at(0).destroy(); 
+	}
+	
+}
 
 // Initializer
 function loadData(){
@@ -17,7 +28,7 @@ function loadData(){
 		},{
 			"title": "Dog Dev",
 			"description": "Maybe this is a smart blonde?",
-			"path": "/pictures/dogdev.jpg",
+			"path": "/pictures/dogdev.jpeg",
 			"location": "internet",
 			"photographer": "unknown"			
 		}]);
@@ -32,8 +43,23 @@ function loadData(){
 	}
 }
 
-loadData();
+// Event handlers
 
+function doClickOnTV(e){
+	
+	var detailWin = Alloy.createController("details", { "$model": Alloy.Collections.Picture.get(e.rowData.model) }).getView();
+	if(OS_IOS){
+		$.navWin.openWindow(detailWin);
+	}else{
+		$.navWin.open();
+	}
+	
+}
+
+// Use reset to test
+//resetData();
+
+loadData();
 
 if(OS_IOS){
 	// on ios we launch a navigation window
