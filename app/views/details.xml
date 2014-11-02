@@ -1,5 +1,5 @@
 <Alloy>
-	<Window>
+	<Window onClose="doCleanUp">
 		<View layout="vertical">
 			<Label id="title" text="{title}" />
 			<ImageView image="{path}" />
