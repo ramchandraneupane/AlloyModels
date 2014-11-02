@@ -25,12 +25,6 @@ function loadData(){
 			"path": "/pictures/software_development.jpg",
 			"location": "internet",
 			"photographer": "unknown"
-		},{
-			"title": "Dog Dev",
-			"description": "Maybe this is a smart blonde?",
-			"path": "/pictures/dogdev.jpeg",
-			"location": "internet",
-			"photographer": "unknown"			
 		}]);
 		
 		// Loop through the elements and save them
@@ -46,14 +40,22 @@ function loadData(){
 // Event handlers
 
 function doClickOnTV(e){
-	
 	var detailWin = Alloy.createController("details", { "$model": Alloy.Collections.Picture.get(e.rowData.model) }).getView();
 	if(OS_IOS){
 		$.navWin.openWindow(detailWin);
 	}else{
 		$.navWin.open();
 	}
-	
+}
+
+function doClickAdd(e){
+	Ti.API.info("Add button pressed");	
+	var addmodel = Alloy.createController("addmodel").getView();
+	if(OS_IOS){
+		$.navWin.openWindow(addmodel);
+	}else{
+		$.addmodel.open();
+	}
 }
 
 // Use reset to test

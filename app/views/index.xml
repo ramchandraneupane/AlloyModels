@@ -3,7 +3,7 @@
 	<NavigationWindow id="navWin" platform="ios">
 		<Window title="Picture List">
 			<RightNavButton>
-				<Button systemButton="ADD" />
+				<Button systemButton="ADD" onClick="doClickAdd" />
 			</RightNavButton>
 			<View>
 				<TableView id="tvList" dataCollection="Picture">

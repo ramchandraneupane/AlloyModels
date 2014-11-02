@@ -1,0 +1,14 @@
+<Alloy>
+	<Collection src="Picture" />
+	<Window onClose="doCleanUp">
+		<RightNavButton platform="ios">
+			<Button systemButton="SAVE" onClick="doClickSave" />
+		</RightNavButton>
+		<View>
+			<TextField id="booktitle" hintText="Whats the title?" />
+			<TextArea id="description" borderWidth="2" borderColor="#bbb" borderRadius="5" color="#888" textAlign="left" value="Whats the story?" top="60" width="300" height="70" />
+			<TextField id="location" hintText="Where was it taken?" />
+			<TextField id="photographer" hintText="Who took the picture?" />
+		</View>
+	</Window>
+</Alloy>
