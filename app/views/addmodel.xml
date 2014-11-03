@@ -1,9 +1,15 @@
 <Alloy>
-	<Collection src="Picture" />
+	<Collection src="Picture" /> <!-- This instantiates a singleton of the collection -->
 	<Window onClose="doCleanUp">
+		<!-- Again we seperate the two navigation markups, but here we have no NavigationWindow which makes it less clunky -->
+		<!-- iOS navigation markup -->
 		<RightNavButton platform="ios">
 			<Button systemButton="SAVE" onClick="doClickSave" />
 		</RightNavButton>
+		<!-- Android navigation markup -->
+		<Menu platform="android">
+			<MenuItem title="Add" onClick="doClickSave" icon="Ti.Android.R.drawable.ic_menu_save" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" />
+		</Menu>
 		<View>
 			<TextField id="booktitle" hintText="Whats the title?" />
 			<TextArea id="description" borderWidth="2" borderColor="#bbb" borderRadius="5" color="#888" textAlign="left" value="Whats the story?" top="60" width="300" height="70" />

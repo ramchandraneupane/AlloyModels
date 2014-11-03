@@ -39,14 +39,7 @@ function loadData(){
 
 // Event handlers
 
-function doClickOnTV(e){
-	var detailWin = Alloy.createController("details", { "$model": Alloy.Collections.Picture.get(e.rowData.model) }).getView();
-	if(OS_IOS){
-		$.navWin.openWindow(detailWin);
-	}else{
-		$.navWin.open();
-	}
-}
+
 
 function doClickAdd(e){
 	Ti.API.info("Add button pressed");	
@@ -62,6 +55,9 @@ function doClickAdd(e){
 //resetData();
 
 loadData();
+
+// Global reference to the nav window
+Alloy.Globals.navWin = $.navWin;
 
 if(OS_IOS){
 	// on ios we launch a navigation window
